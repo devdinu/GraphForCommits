@@ -2,59 +2,25 @@
 <head>
 	<title></title>
 	<script src="http://localhost:9000/js/d3.min.js" type="application/javascript"></script>
-	
+	<script src="http://localhost:9000/js/c3.min.js" type="application/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://localhost:9000/css/c3.css">
 </head>
-
-<link rel="import" href="dependencies.html">
-
 <body>
-	This is Testing... :) New node fater change
-
-	<svg width="50" height="50">
-		<circle cx="25" cy="25" r="25" />
-	</svg>
-
-	<svg class="bullet" width="750" height="30" x="0">
-		<rect class="range s1" width="400" height="20" x="0"></rect>
-	</svg>
-
-	<div class="chart">
-		<div>This is testing chart</div>
+	Sample Graph Using C3 and D3
+	<div id="chart">
 	</div>
 </body>
-
 </html>
 
-
-
-<!-- <script type="text/javascript" src="../lib/require.js"></script> -->
-
-<!-- 
-	<script type="text/javascript">
-
-		var data = [1,2,3,4,100];
-
-		var charts_d3 = d3.select("body").append("div").attr("class", "chart")
-		charts_d3.selectAll("div").data(data
-			).enter().append("div")
-		.style("width", function(d) { return d * 10 + "px"; }).text(function(d) { return d; });
-
-
-		var chart = c3.generate({
-			data : {
-				columns : [
-				['data1', 10,20,30,40],
-				['data2', 100,200,300	]
-
-				]
-			}
-		});
-
-		// setTimeout(function() {
-		// 	chart.load({
-		// 		columns.load({ids:'data1'})
-		// 	}, 1000)
-		// })
+<script type="text/javascript">
+	var chart = c3.generate({
+		bindto : '#chart',
+		data : {
+			columns : [
+				['data1', 10,21,1,40],
+				['data2', 100,20,300	]
+			]
+		}
+	});
 
 </script> 
--->

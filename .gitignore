@@ -4,3 +4,4 @@ node_modules
 lib/tmp
 requirements.txt
 *.swp
+*.tmp
