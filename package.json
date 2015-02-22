@@ -1,0 +1,31 @@
+{
+  "name": "Graph",
+  "version": "0.0.1",
+  "description": "Web App to Draw Graph from the commit log",
+  "main": "server.js",
+  "dependencies": {
+    "node-static": "^0.7.6",
+    "express": "^4.11.2",
+    "mustache": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dineshkumar-cse/GraphForCommits.git"
+  },
+  "keywords": [
+    "Node",
+    "D3",
+    "Graph"
+  ],
+  "author": "dineshkb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dineshkumar-cse/GraphForCommits/issues"
+  },
+  "homepage": "https://github.com/dineshkumar-cse/GraphForCommits"
+}
