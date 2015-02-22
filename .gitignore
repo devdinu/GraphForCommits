@@ -1,5 +1,6 @@
 .python-version
 node_modules
 *.out
-lib
+lib/tmp
 requirements.txt
+*.swp
