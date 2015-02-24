@@ -19,7 +19,6 @@ var static_server = new static.Server('./lib');
 http.createServer(function(req,res) {
 	var url_p = url.parse(req.url,true);
 	if(url_p.path.indexOf('.py') > -1) {
-		console.log(url_p);
 		var data = getData(res);
 	}
 	else {
@@ -44,15 +43,20 @@ function readHtmlFile(fn) {
 
 function getData(res) {
 	var options = {
-		scriptPath : '/Users/dineshkb/Documents/Learn/Python/Graph/src'
+		scriptPath : '/Users/dineshkb/Documents/Learn/Python/Graph/src',
+		args: 'commits.log'
+
 	}
 	var test;
 	pythonShell.run('DataExtractor.py', options, function(err, data) {
 		if(err) {
-			res.end(err)
+			console.log('Error in parsing...')
+			res.end(err.toString())
 		}
-		if(data)
+		if(data) {
+			console.log('Nodes : '+data);
 			res.end(data.toString());
+		}
 		else
 			res.end('Data is null!')
 	})
