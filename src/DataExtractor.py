@@ -1,11 +1,6 @@
 import json, re, os, sys, pickle
-import pdb
 from collections import Counter
 
-class MyEncoder(json.JSONEncoder):
-	def default(self, obj):
-		pdb.set_trace()
-		return [str(obj), obj]
 
 class Extractor(object):
 	"""docstring for Extractor"""
@@ -26,10 +21,7 @@ class Extractor(object):
 		final_list=[]
 		for key, value in count.items():
 			final_list.append([str(key),value])
-		# print(json.dumps(count.items(), cls=MyEncoder))
-		# print(json.dumps(count))
-		# print MyEncoder().encode(count)
-		# print(json.dumps(count.items()))
+
 		print(json.dumps(final_list))
 
 	def extract_data(self):
@@ -41,5 +33,4 @@ if len(sys.argv)==2:
 else:
 	extractor = Extractor('../commits.log')
 
-# pdb.run('extractor.extract_data()')
 extractor.extract_data()

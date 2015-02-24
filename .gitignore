@@ -5,3 +5,4 @@ lib/tmp
 requirements.txt
 *.swp
 *.tmp
+*.log
