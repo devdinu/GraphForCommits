@@ -4,9 +4,10 @@
   "description": "Web App to Draw Graph from the commit log",
   "main": "server.js",
   "dependencies": {
-    "node-static": "^0.7.6",
     "express": "^4.11.2",
-    "mustache": "^1.1.0"
+    "mustache": "^1.1.0",
+    "node-static": "^0.7.6",
+    "python-shell": "0.0.3"
   },
   "devDependencies": {},
   "scripts": {

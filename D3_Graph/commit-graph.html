@@ -1,8 +1,8 @@
 <html>
 <head>
-	<title></title>
 	<script src="http://localhost:9000/js/d3.min.js" type="application/javascript"></script>
 	<script src="http://localhost:9000/js/c3.min.js" type="application/javascript"></script>
+	<script src="http://localhost:9000/js/jquery-2.1.3.min.js" type="application/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="http://localhost:9000/css/c3.css">
 </head>
 <body>
@@ -13,14 +13,33 @@
 </html>
 
 <script type="text/javascript">
-	var chart = c3.generate({
-		bindto : '#chart',
-		data : {
-			columns : [
-				['data1', 10,21,1,40],
-				['data2', 100,20,300	]
-			]
-		}
-	});
+	
+	function drawGraph(data_received) {
+		console.log(data_received);
+		var chart_input = $.parseJSON(data_received);
+		var chart = c3.generate({
+			bindto : '#chart',
+			data : {
+				columns : chart_input
+			}
+		});
+	}
+
+	function get_data() {
+		console.log('request made');
+		$.ajax({
+			url : "DataExtractor.py",
+			data : {'fname' : 'extract_data', 'limit':100}
+		}).done( function( data ) {
+			console.log('received: '+data);
+			drawGraph(data);
+		}).fail( function( err ) {
+			console.log('failed!');
+		})
+	}
+	
+	window.onload = function() {
+		get_data();
+	}
 
 </script> 
