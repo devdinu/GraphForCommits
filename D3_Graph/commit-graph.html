@@ -20,7 +20,11 @@
 		var chart = c3.generate({
 			bindto : '#chart',
 			data : {
-				columns : chart_input
+				columns : chart_input,
+				type : 'bar'
+			},
+			bar : {
+				ratio : 0.5
 			}
 		});
 	}
